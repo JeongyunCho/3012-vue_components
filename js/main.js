@@ -8,7 +8,7 @@
                 console.log('hello from the child comp')
             },
             runParentFunc(){
-                this.$emit('passfunccallup');
+                this.$emit('passfunccallup','hello from the runParentFunc'); //call func on Parent
             }
         },
         created:function(){
@@ -27,8 +27,8 @@
             logParent(message){
                 console.log("from the parent", message);
             },
-            logMainMessage(){
-                console.log("called from inside a child, lives in the parent");
+            logMainMessage(message){
+                console.log("called from inside a child, lives in the parent", message);
             }
         },
         components: {
