@@ -1,16 +1,26 @@
 (() => {
     //component will go here
     const homePageComponent = {
-        template: "<h2>You're on the home page </h2>"
+        template: "<h2>You're on the home page</h2>"
     };
 
     const userPageComponent = {
-        template: "<h2>You're on the user page </h2>"
+        template: "<h2>You're on the user page</h2>"
+    };
+
+    const contactPageComponent = {
+        template: "<h2>You're on the contact page</h2>"
+    };
+
+    const errorPageComponent = {
+        template: "<h2>Page not Found! Please try again</h2>"
     };
 
     const routes = [
         { path: '/', name: 'home', component: homePageComponent },
-        { path: '/user', name: 'user', component: userPageComponent }
+        { path: '/user', name: 'user', component: userPageComponent },
+        { path: '/contact', name: 'contact', component: contactPageComponent },
+        { path: '/*', name: 'error', component: errorPageComponent }
     ];
 
     const router = new VueRouter({
@@ -35,7 +45,8 @@
         },
         components: {
             'homePageComponent': homePageComponent,
-            'userPageComponent': userPageComponent
+            'userPageComponent': userPageComponent,
+            'contactPageComponent': contactPageComponent
         },
 
         router: router
