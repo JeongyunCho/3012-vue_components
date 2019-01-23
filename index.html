@@ -13,7 +13,7 @@
     <main>
         <div id="app">
             <router-link :to="{ path: '/'}">Home</router-link>
-            <router-link :to="{ path: '/user'}">User</router-link>
+            <router-link :to="{ path: '/users/1'}">Users</router-link>
             <a href="#/contact">Contact</a>
           <!-- the router view element is where the components get rendered when changing the address bar (the route) -->
             <transition name="fade" mode="out-in">
@@ -21,7 +21,16 @@
             </transition>
         </div>
     </main>
-
+<!-- templates -->
+<template id="userList">
+    <div>
+        <h3>Current User:
+            <span v-if="users.length > 0">
+                {{ users[0].first_name }} {{ users[0].last_name }}
+            </span>
+        </h3>
+    </div>
+</template>
 
     <script src="js/main.js"></script>
 </body>
